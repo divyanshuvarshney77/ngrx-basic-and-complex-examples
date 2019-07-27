@@ -1,0 +1,14 @@
+{{ $message | async}}
+
+<div *ngIf="post | async as p">
+    <h2>{{ p.text }}</h2>
+    <h4>Votes: {{ p.likes }}</h4>
+
+    
+    <button (click)='upVote()'>Upvote</button>
+    <button (click)='downVote()'>Downvote</button>
+    <button (click)='resetPost()'>Reset</button>
+
+    <input [(ngModel)]="text" />
+    <button (click)="editText()">Change Title</button>
+</div>
